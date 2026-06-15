@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuilderScore AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+  <div class="page">
+
+    <!-- Top Nav -->
+    <nav class="top-bar">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        <span class="logo-text">BuilderScore</span>
+      </div>
+      <div class="nav-links">
+        <a href="#dashboard" class="nav-link active">Dashboard</a>
+        <a href="#sprints" class="nav-link">Sprints</a>
+        <a href="#leaderboard" class="nav-link">Leaderboard</a>
+        <a href="#opportunities" class="nav-link">Opportunities</a>
+      </div>
+      <div class="nav-right">
+        <button class="btn-outline btn-sm"><i class="ti ti-bell" aria-hidden="true"></i></button>
+        <div class="nav-avatar">MK</div>
+      </div>
+    </nav>
+
+    <!-- Profile Card -->
+    <section class="profile-section" id="dashboard">
+      <div class="avatar-lg">MK</div>
+      <div class="profile-info">
+        <h1 class="profile-name">Mitansh Kumar</h1>
+        <p class="profile-sub">Full-stack · AI/ML · Web3 — India</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Gemini API</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Solidity</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+      <div class="score-display">
+        <div class="score-number">847</div>
+        <div class="score-label">Builder Score</div>
+        <div class="score-rank">Top 4% globally</div>
+      </div>
+    </section>
+
+    <!-- Metrics Row -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Sprints completed</div>
+        <div class="metric-value">12</div>
+        <div class="metric-sub metric-up"><i class="ti ti-trending-up" aria-hidden="true"></i> 3 this month</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Avg judge rating</div>
+        <div class="metric-value">8.4</div>
+        <div class="metric-sub metric-up"><i class="ti ti-trending-up" aria-hidden="true"></i> +0.6 vs last quarter</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Shipping streak</div>
+        <div class="metric-value">6 <span style="font-size:14px;font-weight:400;">wks</span></div>
+        <div class="metric-sub" style="color:#888;">Longest: 9 weeks</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Community points</div>
+        <div class="metric-value">340</div>
+        <div class="metric-sub metric-up"><i class="ti ti-trending-up" aria-hidden="true"></i> +80 from mentoring</div>
+      </div>
+    </div>
+
+    <!-- Two Column -->
+    <div class="two-col">
+
+      <!-- Score Breakdown -->
+      <div class="card">
+        <div class="card-title">
+          <i class="ti ti-chart-bar" aria-hidden="true"></i>
+          Score breakdown
+          <span class="card-action" id="score-info-btn">How is this calculated?</span>
+        </div>
+        <div id="score-info" class="info-box hidden">
+          Each category is weighted: Consistency (25%), Code Quality (20%), Judge Ratings (25%), Community (15%), Ecosystem (15%). Scores update after every sprint submission.
+        </div>
+        <div class="bar-list">
+          <div class="bar-row">
+            <div class="bar-label">Consistency</div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%;background:#534AB7;"></div></div>
+            <div class="bar-val">88</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Code quality</div>
+            <div class="bar-track"><div class="bar-fill" style="width:76%;background:#7F77DD;"></div></div>
+            <div class="bar-val">76</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Judge ratings</div>
+            <div class="bar-track"><div class="bar-fill" style="width:84%;background:#534AB7;"></div></div>
+            <div class="bar-val">84</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Community</div>
+            <div class="bar-track"><div class="bar-fill" style="width:62%;background:#AFA9EC;"></div></div>
+            <div class="bar-val">62</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Ecosystem</div>
+            <div class="bar-track"><div class="bar-fill" style="width:70%;background:#7F77DD;"></div></div>
+            <div class="bar-val">70</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Sprints -->
+      <div class="card" id="sprints">
+        <div class="card-title">
+          <i class="ti ti-bolt" aria-hidden="true"></i>
+          Recent sprints
+          <span class="card-action">View all</span>
+        </div>
+        <div class="sprint-list">
+          <div class="sprint-item">
+            <div class="sprint-icon" style="background:#EEEDFE;color:#3C3489;">🛡</div>
+            <div class="sprint-info">
+              <div class="sprint-name">RailGuard <span class="badge badge-gold">1st place</span></div>
+              <div class="sprint-date">Far Away (Zuup) · June 2025</div>
+            </div>
+            <div class="sprint-score">96</div>
+          </div>
+          <div class="sprint-item">
+            <div class="sprint-icon" style="background:#E1F5EE;color:#085041;">⚖️</div>
+            <div class="sprint-info">
+              <div class="sprint-name">DriveLegal <span class="badge badge-silver">Finalist</span></div>
+              <div class="sprint-date">IIT Madras CoERS · June 2025</div>
+            </div>
+            <div class="sprint-score">88</div>
+          </div>
+          <div class="sprint-item">
+            <div class="sprint-icon" style="background:#FAEEDA;color:#633806;">🔤</div>
+            <div class="sprint-info">
+              <div class="sprint-name">SanskritEnv <span class="badge badge-blue">Finalist</span></div>
+              <div class="sprint-date">Meta × HuggingFace · Apr 2025</div>
+            </div>
+            <div class="sprint-score">82</div>
+          </div>
+          <div class="sprint-item">
+            <div class="sprint-icon" style="background:#EEEDFE;color:#3C3489;">📄</div>
+            <div class="sprint-info">
+              <div class="sprint-name">ResumeIQ</div>
+              <div class="sprint-date">Side project · Mar 2025</div>
+            </div>
+            <div class="sprint-score">74</div>
+          </div>
+          <div class="sprint-item">
+            <div class="sprint-icon" style="background:#E6F1FB;color:#0C447C;">☁️</div>
+            <div class="sprint-info">
+              <div class="sprint-name">Vision-to-Cloud Engine</div>
+              <div class="sprint-date">AI for Bharat · Feb 2025</div>
+            </div>
+            <div class="sprint-score">79</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity Heatmap -->
+    <div class="card full-width">
+      <div class="card-title">
+        <i class="ti ti-activity" aria-hidden="true"></i>
+        Build activity
+        <span style="font-size:11px;color:#888;font-weight:400;margin-left:auto;">Last 6 months</span>
+      </div>
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <div class="day d-0"></div>
+        <div class="day d-1"></div>
+        <div class="day d-2"></div>
+        <div class="day d-3"></div>
+        <div class="day d-4"></div>
+        <span>More</span>
+      </div>
+      <div class="weeks" id="heatmap"></div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="card full-width" id="leaderboard">
+      <div class="card-title">
+        <i class="ti ti-trophy" aria-hidden="true"></i>
+        Global leaderboard — India
+        <span class="card-action" style="margin-left:auto;">See global</span>
+      </div>
+      <div class="leaderboard">
+        <div class="lb-header">
+          <span>Rank</span>
+          <span>Builder</span>
+          <span>Score</span>
+          <span>Change</span>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank top">1</div>
+          <div class="lb-builder">
+            <div class="lb-avatar" style="background:#EEEDFE;color:#3C3489;">AK</div>
+            <div>
+              <div class="lb-name">Arjun K.</div>
+              <div class="lb-org">IIT Bombay</div>
+            </div>
+          </div>
+          <div class="lb-score">912</div>
+          <div class="lb-change neutral">—</div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank top">2</div>
+          <div class="lb-builder">
+            <div class="lb-avatar" style="background:#E1F5EE;color:#085041;">PR</div>
+            <div>
+              <div class="lb-name">Priya R.</div>
+              <div class="lb-org">BITS Pilani</div>
+            </div>
+          </div>
+          <div class="lb-score">889</div>
+          <div class="lb-change up">↑ 2</div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank top">3</div>
+          <div class="lb-builder">
+            <div class="lb-avatar" style="background:#FAEEDA;color:#633806;">SM</div>
+            <div>
+              <div class="lb-name">Siddharth M.</div>
+              <div class="lb-org">NIT Trichy</div>
+            </div>
+          </div>
+          <div class="lb-score">862</div>
+          <div class="lb-change down">↓ 1</div>
+        </div>
+        <div class="lb-row lb-you">
+          <div class="lb-rank top">4</div>
+          <div class="lb-builder">
+            <div class="lb-avatar" style="background:#534AB7;color:#fff;">MK</div>
+            <div>
+              <div class="lb-name">Mitansh K. <span class="you-badge">You</span></div>
+              <div class="lb-org">SST · IIT Madras</div>
+            </div>
+          </div>
+          <div class="lb-score">847</div>
+          <div class="lb-change up">↑ 3</div>
+        </div>
+        <div class="lb-row">
+          <div class="lb-rank">5</div>
+          <div class="lb-builder">
+            <div class="lb-avatar" style="background:#F1EFE8;color:#444441;">RT</div>
+            <div>
+              <div class="lb-name">Rohit T.</div>
+              <div class="lb-org">VIT Vellore</div>
+            </div>
+          </div>
+          <div class="lb-score">831</div>
+          <div class="lb-change down">↓ 2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opportunities -->
+    <div id="opportunities">
+      <div class="section-heading">
+        <h2>Opportunities for you</h2>
+        <p>Based on your score and skill tags</p>
+      </div>
+      <div class="opp-grid">
+        <div class="opp-card">
+          <div class="opp-tag">Grant</div>
+          <div class="opp-name">Polygon Builder Grant</div>
+          <div class="opp-desc">Up to $5,000 for Web3 builders with consistent shipping history.</div>
+          <div class="opp-meta"><i class="ti ti-calendar" aria-hidden="true"></i> Deadline: July 15</div>
+          <button class="btn-primary btn-sm" style="margin-top:12px;">Apply now</button>
+        </div>
+        <div class="opp-card">
+          <div class="opp-tag opp-tag-blue">Bounty</div>
+          <div class="opp-name">AI/RAG Track — HackIndia</div>
+          <div class="opp-desc">$2,500 bounty for best RAG implementation. Score 800+ required.</div>
+          <div class="opp-meta"><i class="ti ti-calendar" aria-hidden="true"></i> Deadline: Aug 1</div>
+          <button class="btn-primary btn-sm" style="margin-top:12px;">View bounty</button>
+        </div>
+        <div class="opp-card">
+          <div class="opp-tag opp-tag-green">Hiring</div>
+          <div class="opp-name">Founding Engineer — AI Startup</div>
+          <div class="opp-desc">Series A startup looking for builders with proven AI/ML track record.</div>
+          <div class="opp-meta"><i class="ti ti-map-pin" aria-hidden="true"></i> Remote · Bengaluru</div>
+          <button class="btn-primary btn-sm" style="margin-top:12px;">Express interest</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <div class="logo-dot"></div>
+        <span>BuilderScore AI</span>
+      </div>
+      <p>Built for the builders who keep shipping.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
