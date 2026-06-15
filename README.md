@@ -89,4 +89,4 @@ Score breakdown weights are in `script.js` as comments. Heatmap data is randomly
 
 ## Built by
 
-[Mitansh Kumar](https://github.com/yourusername) · Scaler School of Technology × IIT Madras BS '29
+[Mitansh Dev](https://github.com/yourusername) · Scaler School of Technology × IIT Madras BS '29
